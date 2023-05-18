@@ -84,7 +84,7 @@ class Update(APIView):
         try:
             database_snippet = Snippet.objects.get(id = snippet_id)
         except Exception:
-            return Response({'error': 'Snippet not found.'}, status=status.HTTP_404_NOT_FOUND)
+            return Response({'error': 'Snippet id is not valid.'}, status=status.HTTP_404_NOT_FOUND)
         snippet_serializer = SnippetSerializer(database_snippet, data=request.data)
         if snippet_serializer.is_valid(raise_exception=True):
             snippet_serializer.save()
