@@ -201,4 +201,3 @@ class ShowAllApiDoc(APIView):
         return Response({'status':'success','message':'show all api list','all api list':result},status=status.HTTP_200_OK)
         
         
-        
